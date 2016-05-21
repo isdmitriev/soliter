@@ -1,0 +1,348 @@
+﻿<!--
+src - source, источник откуда подгружается изображение.
+Источник может быть как локальний дистрибутив, так и какой либо источник в сети.
+Форматы которые используются в верстке:
+.jpg
+.gif
+.png 
+-->
+
+<html>
+    <head>
+        <title>Атрибут тега img - src</title>
+        <script src="carts.js"></script>
+
+        <script>
+            
+            window.onload = function ()
+           {
+                initilizeHandlers();
+                
+                function allowDrop(ev)
+                {
+                   
+                    ev.preventDefault();
+                   
+
+                }
+
+                function drag(ev)
+                {
+                    inimg();
+                    ev.dataTransfer.setData("text", ev.target.id);
+
+                }
+
+                function drop4(ev)
+                {
+
+                    
+                  var data = ev.dataTransfer.getData("text");
+                    if (sol.method(data, "main4") == true)
+                    {
+                        inimg();
+                        var iddiv = document.getElementById(data).getAttribute("class");
+                        
+                        sol.getCartByid4(data, iddiv);
+                        inimg();
+                    }
+                    
+                    
+                }
+
+                function drop5(ev)
+                {
+                    
+                    ev.preventDefault();
+                    
+                   
+                    var data = ev.dataTransfer.getData("text");
+                    if (sol.method(data, "main5") == true)
+                    {
+                        inimg();
+                        var iddiv = document.getElementById(data).getAttribute("class");
+                        inimg();
+                        sol.getCartByid5(data, iddiv);
+                        inimg();
+                    }
+                }
+
+                function drop6(ev)
+                {
+                   
+                    ev.preventDefault();
+                    
+                   
+                    var data = ev.dataTransfer.getData("text");
+                    if (sol.method(data, "main6") == true)
+                    {
+                        inimg();
+                        
+                        var iddiv = document.getElementById(data).getAttribute("class");
+
+                        sol.getCartByid6(data, iddiv);
+                        inimg();
+                    }
+                    
+                }
+
+                function drop1(ev)
+                {
+                    
+                    ev.preventDefault();
+                    
+                   
+                    var data = ev.dataTransfer.getData("text");
+                    if (sol.method(data, "main") == true)
+                    {
+                        inimg();
+                        var iddiv = document.getElementById(data).getAttribute("class");
+
+                        sol.getCartByid1(data, iddiv);
+                        inimg();
+                    }
+                    
+                }
+
+                function drop2(ev)
+                {
+                    
+                    ev.preventDefault();
+
+                  
+                    var data = ev.dataTransfer.getData("text");
+                    if (sol.method(data, "main2") == true)
+                    {
+                        inimg();
+                        var iddiv = document.getElementById(data).getAttribute("class");
+
+                        sol.getCartByid2(data, iddiv);
+                        inimg();
+                    }
+                    
+                }
+
+                function drop3(ev)
+                {
+                   
+                    ev.preventDefault();
+
+                    
+
+                    var data = ev.dataTransfer.getData("text");
+                    
+                    if (sol.method(data, "main3") == true)
+                    {
+                        inimg();
+                        var iddiv = document.getElementById(data).getAttribute("class");
+
+                        sol.getCartByid3(data, iddiv);
+                        inimg();
+                    }
+                }
+
+                function drop7(ev)
+                {
+                    
+                    ev.preventDefault();
+
+                    
+                    var data = ev.dataTransfer.getData("text");
+                    
+                    if (sol.method(data, "main7") == true)
+                    {
+                        inimg();
+                        var iddiv = document.getElementById(data).getAttribute("class");
+
+                        sol.getCartByid7(data, iddiv);
+                        inimg();
+                    }
+                }
+
+                function dropres1(ev)
+                {
+                    var data = ev.dataTransfer.getData("text");
+                    var iddiv = document.getElementById(data).getAttribute("class");
+                    
+                    sol.getResult(data, "result1", iddiv);
+                    inimg();
+                }
+
+                function dropres2(ev)
+                {
+                    var data = ev.dataTransfer.getData("text");
+                    var iddiv = document.getElementById(data).getAttribute("class");
+                    sol.getResult(data, "result2", iddiv);
+                    inimg();
+                }
+                function dropres3(ev)
+                {
+                    var data = ev.dataTransfer.getData("text");
+                    var iddiv = document.getElementById(data).getAttribute("class");
+                    sol.getResult(data, "result3",iddiv);
+                    inimg();
+                }
+
+                function dropres4(ev)
+                {
+                    var data = ev.dataTransfer.getData("text");
+                    var iddiv = document.getElementById(data).getAttribute("class");
+                    sol.getResult(data, "result4",iddiv);
+                    inimg();
+                }
+
+               
+
+                           function initilizeHandlers() {
+                        document.getElementById("main4").ondragover = allowDrop;
+                        document.getElementById("main4").ondrop = drop4;
+                        document.getElementById("main7").ondragover = allowDrop;
+                        document.getElementById("main7").ondrop = drop7;
+
+                        document.getElementById("main5").ondragover = allowDrop;
+                        document.getElementById("main5").ondrop = drop5;
+                        document.getElementById("main6").ondragover = allowDrop;
+                        document.getElementById("main6").ondrop = drop6;
+
+                        document.getElementById("main2").ondragover = allowDrop;
+                        document.getElementById("main2").ondrop = drop2;
+                        document.getElementById("main3").ondragover = allowDrop;
+                        document.getElementById("main3").ondrop = drop3;
+
+                        document.getElementById("main").ondragover = allowDrop;
+                        document.getElementById("main").ondrop = drop1;
+
+                        document.getElementById("full").ondragover = allowDrop;
+
+                        document.getElementById("result1").ondragover = allowDrop;
+                        document.getElementById("result1").ondrop = dropres1;
+
+                        document.getElementById("result2").ondragover = allowDrop;
+                        document.getElementById("result2").ondrop = dropres2;
+
+                        document.getElementById("result3").ondragover = allowDrop;
+                        document.getElementById("result3").ondrop = dropres3;
+
+                        document.getElementById("result4").ondragover = allowDrop;
+                        document.getElementById("result4").ondrop = dropres4;
+
+
+                    }
+
+
+                    var sol = new Soliter();
+                    sol.start();
+
+                    sol.generateFullCarts();
+
+                    function inimg()
+                    {
+                        var imgs = document.getElementsByTagName("img");
+                        for (i = 0; i < imgs.length; i++) {
+                            imgs[i].ondragstart = drag;
+                        }
+                    }
+                    inimg();
+
+
+                    document.getElementById("stop").onclick = function ()
+                    {
+                       
+                        sol.fullDivClick();
+                        inimg();
+                    }
+                    document.getElementsByTagName("a")[0].onclick = function ()
+                    {
+                        sol.resetGame();
+                        sol.initilizeGame();
+                        sol.generateFullCarts();
+                        initilizeHandlers();
+                        inimg();
+                    }
+                
+                }
+            
+             </script>
+              
+    </head>
+    <body>
+          <a href="#">
+             new game
+         </a>
+        <br />
+        <br />  
+        <div id="stop" style=" width:125px; height:80px; float:left" ondrop="drop(event)"  ondragover="allowDrop(event)" >
+            <img src="Images/ruba.png" style="height:80px; height:125px" />
+        </div>
+
+        <div id="full" style=" width:125px; float:left; margin-left:100px; background-color:aqua; height:80px" <!--ondrop="drop(event)" ondragover="allowDrop(event)"-->>
+            
+        </div>
+
+        <div id="result1" style=" width:125px; float:left; background-color:blue; margin-left:100px; background-color:aqua; height:80px">
+            
+
+        </div>
+        <div  id="result2" style=" width:125px; float:left; background-color:blue; margin-left:100px; background-color:aqua; height:80px">
+
+
+        </div>
+        <div  id="result3"style=" width:125px; float:left; background-color:blue; margin-left:100px; background-color:aqua; height:80px">
+
+
+        </div>
+        <div  id="result4"style=" width:125px; float:left; background-color:blue; margin-left:100px; background-color:aqua; height:80px">
+
+
+        </div>
+
+      <div style="height:300px">
+
+      </div>
+                
+                
+        <div id="main" style="float:left">
+            
+        </div>
+        <div id="main2" style="float:left; margin-left:150px">
+
+        </div>
+
+        <div id="main3" style="float:left; margin-left:300px">
+
+        </div>
+
+        <div id="main4" style="float:left; margin-left:450px" ondragover="allowDrop(event)" ondrop="drop(event)">
+
+        </div>
+
+        <div id="main5" style="float:left; margin-left:600px">
+
+        </div>
+
+        <div id="main6" style="float:left; margin-left:750px">
+
+        </div>
+
+        <div id="main7" style="float:left; margin-left:900px">
+
+        </div>
+
+
+   
+                   
+
+                    
+        
+            
+
+
+
+       
+        
+    </body>
+
+
+
+
+</html>
